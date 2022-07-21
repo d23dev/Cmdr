@@ -23,7 +23,7 @@ return function (Cmdr)
 
 		Window:AddLine(Cmdr.Dispatcher:EvaluateAndRun(text, Player, {
 			IsHuman = true
-		}), true)
+		}), nil, true)
 	end
 
 	-- Sets the Window.OnTextChanged callback so we can update the auto complete
