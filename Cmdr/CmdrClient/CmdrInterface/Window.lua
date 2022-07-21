@@ -61,7 +61,7 @@ function Window:UpdateWindowHeight()
 end
 
 --- Add a line to the command bar
-function Window:AddLine(text, color)
+function Window:AddLine(text, color, useRichText)
 	text = tostring(text)
 
 	if #text == 0 then
@@ -86,6 +86,9 @@ function Window:AddLine(text, color)
 	line.Text = str
 	line.TextColor3 = color or line.TextColor3
 	line.Parent = Gui
+	if useRichText then
+		line.RichText = true
+	end
 end
 
 --- Returns if the command bar is visible
