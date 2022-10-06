@@ -110,8 +110,10 @@ end
 
 -- Only register when we aren't in studio because don't want to overwrite what the server portion did
 if RunService:IsServer() == false then
-	Cmdr.Registry:RegisterTypesIn(script:WaitForChild("Types"))
-	Cmdr.Registry:RegisterCommandsIn(script:WaitForChild("Commands"))
+	task.delay(3, function()
+		Cmdr.Registry:RegisterTypesIn(script:WaitForChild("Types"))
+		Cmdr.Registry:RegisterCommandsIn(script:WaitForChild("Commands"))
+	end)
 end
 
 -- Hook up event listener
